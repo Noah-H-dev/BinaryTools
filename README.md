@@ -1,1 +1,1 @@
-This is a barebones Binary toolset for conversion from decimal to binary and visa-versa. It also contains tools for bitshifts and basic binary operations such as: and, or, xor.
+This is a barebones Binary toolset for conversion from decimal to binary and visa-versa. It also contains tools for bitshifts and basic binary operations such as: and, or, xor. This code operates on 16 bit integers
