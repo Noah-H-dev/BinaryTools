@@ -414,7 +414,7 @@ std::wstring ProcessUserInput(const std::wstring& input)
     std::vector<int> binaryNum = {};
     // Example processing: convert to uppercase and add some text
     //std::wstring output = L"Processed: ";
-    int outputNum = 0;
+    long long unsigned int outputNum = 0;
     int size = input.size() - 1;
     for (int c : input)
     {
@@ -440,7 +440,7 @@ std::wstring ProcessUserInputTwo(const std::wstring& input)
     std::vector<int> binaryNum = {};
     // Example processing: convert to uppercase and add some text
     //std::wstring output = L"Processed: ";
-    int outputNum = 0;
+    long long unsigned int outputNum = 0;
     int size = input.size() - 1;
     for (int c : input)
     {
@@ -461,7 +461,9 @@ std::wstring ProcessBitwiseInput(const std::wstring& input1, const std::wstring&
 
     std::wstring diffFix;
     std::wstring base;
-    int fix = std::stoi(input2);
+        int fix = toInteger(input2);
+    
+	
     for (int k = 0; k < abs(diff); k++) 
     {
         diffFix += L'0';
@@ -525,6 +527,9 @@ std::wstring ProcessBitwiseInput(const std::wstring& input1, const std::wstring&
         for (int i = 0; i < fix; i++) 
         {
             finalString += '0';
+        }
+        if (finalString.size() > 32) {
+			finalString = finalString.substr(finalString.size() - 32, 32);
         }
         break;
     case OperationType::SHIFTRIGHT:
